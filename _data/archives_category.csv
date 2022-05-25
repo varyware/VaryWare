@@ -1,0 +1,7 @@
+platform,name,url,show
+blog,博客,/,FALSE
+weixin,公众号,,FALSE
+taobao,商店,,FALSE
+github,GitHub,https://github.com/varyware,TRUE
+about,关于我,/about,FALSE
+operation,运营,https://varyware.com,FALSE

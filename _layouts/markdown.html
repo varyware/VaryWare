@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="post-wrapper">
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-title-wrapper">
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    </header>
+
+    <div class="post-meta">
+      {% if page.date %}
+      <time class="post-meta-date" class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished">
+        {{ page.date | date: site.data_formats.date_format_short }}
+      </time>
+      {% endif %}
+
+      {% if page.author %}
+      <span class="post-meta-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-author h-card" itemprop="name">by {{ page.author }}</span>
+      </span>
+      {% endif %}
+
+      {%- if page.categories -%}
+      {% for category in page.categories %}
+      <div class="post-meta-cate">
+        <a href="/categories/#{{category}}">#{{category}}</a>
+      </div>
+      {% endfor %}
+      {%- endif-%}
+    </div>
+
+    <div class="post-content e-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  </article>
+
+  <div class="post-image-viewer">
+    <div class="image-viewer-wrapper">
+      <img src="">
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let imgDom = document.querySelector(".post-image-viewer");
+  document.querySelectorAll(".post-content img").forEach(e => e.addEventListener("click", showImage))
+  imgDom.addEventListener("click", e => imgDom.style.display = "none");
+
+  function showImage(evt) {
+    let imgDomImage = document.querySelector(".post-image-viewer img");
+    imgDomImage.src = evt.target.src;
+    imgDom.style.display = "block";
+  }
+</script>

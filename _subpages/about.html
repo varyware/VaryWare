@@ -1,0 +1,28 @@
+---
+layout: default
+title: About
+permalink: /about/
+header_index: 4
+---
+
+<script>
+    document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
+</script>
+
+<div class="wrapper">
+    <div class="post about-content">
+        <h1>VaryWare</h1>
+        <ul class="about-sns-list">
+            {% for platform in site.data.archives_category %}
+            {% if platform.url != nil and platform.show == 'TRUE' %}
+            <li>
+                <a href="{{ platform.url | relative_url }}" target="_blank">
+                    <img src="{{ "/assets/img/sns_icon/"| append: platform.platform | append: "-round.svg" | relative_url }}"
+                        alt=""> {{ platform.name }}
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

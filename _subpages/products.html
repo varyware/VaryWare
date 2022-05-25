@@ -1,0 +1,44 @@
+---
+layout: default
+title: Products
+header_index: 3
+permalink: /products/
+---
+
+<script>
+    document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
+</script>
+
+<div class="wrapper">
+    <ol class="projects-list">
+        {% for item in site.data.products %}
+        <li class="list-item" id="project-{{item.id}}">
+            <div class="image-wrapper">
+                <a href="{{ item.url }}" target="_blank">
+                    <img src="{{ item.img_path }}" alt="{{item.desc}}" loading="lazy">
+                </a>
+            </div>
+            <div class="project-meta">
+                <div class="project-header">
+                    <div class="project-link">
+                        <a href="{{ item.url }}" target="_blank">{{item.title}}</a>
+                        <div class="project-link-meta">
+                            <div class="project-link-meta-visit">
+                                {% assign project_lang = item.lang | downcase %}
+                                <img src="{{ "/assets/img/lang_icon/lang-"| append: project_lang | append: ".svg" | relative_url }}" alt="{{ item.lang }}">
+                                <span>{{ item.lang }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-button">
+                        <a href="{{item.url}}" target="_blank">查看项目</a>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <div>{{item.desc}}</div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ol>
+</div>

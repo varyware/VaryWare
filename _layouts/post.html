@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+{% assign header_index = page.header_index | default: "1" %}
+
+<script>
+  document.querySelector("#header_idx_{{header_index}}").classList.add("current");
+</script>
+<div class="wrapper">
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-header">
+      <a class="post-back-button" href="javascript:history.back(-1);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" stroke="#000" stroke-width="2"
+          class="blog-header__title__icon" id="post-back-button-icon">
+          <path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M7 3L4 6l3 3"></path>
+        </svg>
+        返回
+      </a>
+      <div class="post-meta">
+        <time class="post-meta-date" class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"
+          itemprop="datePublished">
+          {{ page.date | date: site.data_formats.date_format_short }}
+        </time>
+        
+        {% if page.author %}
+        <span class="post-meta-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
+        </span>
+        {% endif %}
+    
+        {%- if page.categories -%}
+        {% for category in page.categories %}
+        <div class="post-meta-cate">
+          <a href="/categories/#{{category}}">#{{category}}</a>
+        </div>
+        {% endfor %}
+        {%- endif-%}
+      </div>
+    </div>
+
+    <header class="post-title-wrapper">
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+      {% if page.author %}
+      <div class="original-sign">
+        <div class="original-tag">非</div>
+        <span class="tooltip">非原创</span>
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="post-content e-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    <hr class="comment-hr">
+
+    {% if site.allow_comment and page.comment %}
+    {% include comment.html %}
+    {%- include disqus_comments.html -%}
+    {% endif %}
+    
+
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  </article>
+
+
+
+  {% capture sidebar_content %}
+  <!-- <div class="share-sidebar">
+    <button> Share </button>
+  </div> -->
+  <div>
+    <p class="toc-sidebar-header">目录</p>
+    {%- include toc.html html=content h_min=2 h_max=2 class='toc-sidebar' item_class='toc-sidebar-item' -%}
+  </div>
+  {% endcapture %}
+  {%- include sidebar.html sidebar_content=sidebar_content -%}
+
+  <div class="post-image-viewer">
+    <div class="image-viewer-wrapper">
+      <img src="">
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let imgDom = document.querySelector(".post-image-viewer");
+  document.querySelectorAll(".post-content img").forEach(e=>e.addEventListener("click", showImage))
+  imgDom.addEventListener("click", e=>imgDom.style.display="none");
+
+  function showImage(evt) {
+    let imgDomImage = document.querySelector(".post-image-viewer img");
+    imgDomImage.src = evt.target.src;
+    imgDom.style.display = "block";
+  }
+</script>

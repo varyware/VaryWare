@@ -1,0 +1,76 @@
+/**
+ * Updates
+ */
+
+.updates-list {
+  margin: 40px 0 200px 0;
+  padding: 0;
+  list-style: none;
+  min-height: 400px;
+
+  .list-item {
+    margin: 0;
+    border-bottom: 1px $grey-lighter-color solid;
+    padding: 14px 0px;
+
+    .list-item-wrapper {
+      margin: 10px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .list-item-meta {
+      margin: 0px;
+      padding: 0px;
+      vertical-align: middle;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .item-date {
+    font-size: 14px;
+    color: $excerpt-color;
+    display: block;
+    padding: 0px;
+    margin: 0 0 4px 0px;
+  }
+
+  .item-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    word-break: break-all;
+    padding: 0;
+    margin: 4px 0;
+
+    a {
+      color: $dark-color;
+    }
+  }
+
+  .item-link:hover {
+    color: $orange-theme-color;
+    text-decoration: none;
+  }
+
+  .item-excerpt {
+    margin: 0px;
+    font-size: 14px;
+    color: $grey-color;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 2px 0 0px 0px;
+  }
+
+  .no-image {
+    width: 100%;
+  }
+  .with-image {
+    width: 70%;
+  }
+}

@@ -1,0 +1,76 @@
+$base-font-family: ui-sans-serif, system-ui, -apple-system, Helvetica, "Helvetica Neue", PingFang SC,
+  BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Microsoft YaHei", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$serif-font-family: "PT Serif", ui-serif, Georgia, "STSongti SC", "SimSong", "STSong", "Source Serif Pro", "noto serif", serif;
+$monospace-font-family: ui-monospace, Monaco, Menlo, "SF Mono Regular", "Lucida Console", SFMono-Regular, Consolas, "Courier New", Liberation Mono, monospace;
+
+$base-font-size: 16px !default;
+
+$grey-color: #595959;
+$white-color: #FFFFFF;
+$black-color: #000000;
+$dark-color: #1D1D20;
+$grey-lighter-color: #e8e8e8;
+$grey-light-color: #F7F7F8;
+$blue-theme-color: #235bcc !default;
+
+$orange-theme-color: #FF9500 !default;
+
+$text-color: #000000;
+$code-background-color: #f6f8fa !default;
+$spacing-unit: 30px !default;
+
+$post-font-color: #1e1f1e !default;
+
+$title-color: #323234 !default;
+$text-color-darkmode: #f0f6fc !default;
+$excerpt-color: #878686 !default;
+$background-color: #fff !default;
+$background-color-darkmode: #0d0f13 !default;
+
+$background-grey: #f8f8f8 !default;
+$background-grey-darkmode: #14161c !default;
+
+$code-background-color: #f6f8fa !default;
+$code-background-color-darkmode: rgb(22, 27, 34) !default;
+$code-color: #24292e !default;
+$code-color-darkmode: rgb(201, 209, 217) !default;
+
+$link-color-darkmode: rgb(88, 166, 255) !default;
+
+$blockquote-color-darkmode: rgb(139, 148, 158) !default;
+
+// $brand-color:      #2B65D9 !default;
+
+$blue-theme-color-darkmode: #eee !default;
+$blue-theme-color-light: lighten($blue-theme-color, 46%) !default;
+$blue-theme-color-dark: darken($blue-theme-color, 25%) !default;
+
+$border-grey-darkmode: #21262d !default;
+
+$grey-color-lighter: lighten($grey-color, 15%) !default;
+$grey-color-light: lighten($grey-color, 25%) !default;
+$grey-darken: #424242 !default;
+$grey-darken-darkmode: #aaaaaa !default;
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width: 1080px !default;
+
+$on-palm: 688px !default;
+$on-laptop: 1080px !default;
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Import partials.
+@import "mindx/base", "mindx/layout", "mindx/markdown",
+  "mindx/toc-sidebar", "mindx/syntax-highlighting", "mindx/updates";
