@@ -131,11 +131,11 @@ pre {
   margin-bottom: $spacing-unit;
 
   a {
-    color: $orange-theme-color;
+    color: $blue-theme-color;
   }
 
   a:visited {
-    color: $orange-theme-color;
+    color: $blue-theme-color;
   }
 
   p {
@@ -272,13 +272,13 @@ pre {
 
     .category-item .current {
       font-size: 14px;
-      color: $orange-theme-color;
+      color: $blue-theme-color;
       font-weight: bold;
     }
 
     .category-item a:hover {
       text-decoration: none;
-      color: $orange-theme-color;
+      color: $blue-theme-color;
       font-weight: bold;
     }
 

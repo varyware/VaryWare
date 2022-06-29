@@ -12,7 +12,7 @@ $black-color: #000000;
 $dark-color: #1D1D20;
 $grey-lighter-color: #e8e8e8;
 $grey-light-color: #F7F7F8;
-$blue-theme-color: #235bcc !default;
+$blue-theme-color: #043CBE !default;
 
 $orange-theme-color: #FF9500 !default;
 
@@ -72,5 +72,5 @@ $on-laptop: 1080px !default;
 }
 
 // Import partials.
-@import "mindx/base", "mindx/layout", "mindx/markdown",
-  "mindx/toc-sidebar", "mindx/syntax-highlighting", "mindx/updates";
+@import "theme/base", "theme/layout", "theme/markdown",
+  "theme/toc-sidebar", "theme/syntax-highlighting", "theme/updates";
