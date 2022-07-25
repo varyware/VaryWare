@@ -8,7 +8,10 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   padding: 0;
   margin: 0;
-  min-width: 870px;
+
+  @include dark-mode {
+    background-color: #000;
+  }
 }
 
 .page-wrapper {
@@ -42,7 +45,7 @@ body {
   }
 
   &:hover {
-    color: $blue-theme-color;
+    color: $tint-color;
     text-decoration: none;
   }
 

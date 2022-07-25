@@ -1,0 +1,277 @@
+.license {
+    max-width: 1024px;
+    margin-right: auto;
+    margin-left: auto;
+
+    padding-top: $unit * 6;
+
+    padding-left: $unit * 4;
+    padding-right: $unit * 4;
+
+    padding-bottom: $unit * 10;
+
+    @include on-palm {
+        padding-left: $unit * 2;
+        padding-right: $unit * 2;
+        max-width: 100%;
+    }
+
+    @include dark-mode {
+        background-color: #000;
+    }
+}
+
+.license-cover {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    aspect-ratio: 4/1;
+
+    @include media-query($on-laptop) {
+        max-height: 300px;
+    }
+
+    @include media-query($on-palm) {
+        display: none;
+    }
+}
+
+/**
+     * licenses List
+     */
+.license-title {
+    font-size: 28px;
+    line-height: 1.5;
+    font-weight: bold;
+    margin: 0px 0 0 0;
+    color: $dark-color;
+
+    @include dark-mode {
+        & {
+            color: $white-color;
+        }
+    }
+}
+
+.license-meta {
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+
+    .license-date,
+    .license-author {
+        color: $grey-dark-color;
+        margin: 5px 0 30px 0;
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+
+        a {
+            color: $grey-dark-color;
+        }
+    }
+}
+
+.license-content {
+    margin-bottom: 20px;
+    line-height: 32px;
+
+    @include dark-mode {
+        color: #eee;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $base-font-family;
+        margin-top: 30px;
+        font-weight: bold;
+        line-height: 1.4;
+    }
+
+    a {
+        color: $tint-color;
+    }
+
+    a:visited {
+        color: $tint-color;
+    }
+
+    p {
+        color: $dark-color;
+        word-break: normal;
+        overflow-wrap: anywhere;
+        font-size: 17px;
+
+        @include dark-mode {
+            color: #ccc;
+        }
+    }
+
+    blockquote p {
+        margin: 0;
+        color: $grey-dark-color;
+
+        @include dark-mode {
+            color: lighten($color: $grey-dark-color, $amount: 30%);
+        }
+    }
+
+    hr {
+        margin: 20px 0;
+        border: 0;
+        border-top-width: 1px;
+        border-top-style: solid;
+    }
+
+    img {
+        cursor: zoom-in;
+        width: 100%;
+        border-radius: 8px;
+        transition: all ease-in 0.5s;
+        -webkit-transition: all ease-in 0.5s;
+        -moz-transition: all ease-in 0.5s;
+        -ms-transition: all ease-in 0.5s;
+        -o-transition: all ease-in 0.5s;
+        display: inherit;
+    }
+
+    img:hover {
+        box-shadow: 0 0 0 3pt #00000020;
+
+        @include dark-mode {
+            box-shadow: 0 0 0 3pt #ffffff20;
+        }
+    }
+
+    h1 {
+        font-size: $funit * 1.5;
+    }
+
+    h2 {
+        font-size: $funit * 1.3;
+    }
+
+    h3 {
+        font-size: $funit * 1.2;
+    }
+
+    h4 {
+        font-size: $funit * 1.1;
+    }
+
+    h5 {
+        font-size: $funit;
+    }
+
+    li:not(:last-child) {
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    ol {
+        li {
+            margin-bottom: 6px;
+        }
+    }
+}
+
+.license-tag {
+    margin: 30px 0;
+
+    .category-tag {
+        a {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+    }
+}
+
+.license-gotop-button {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    z-index: 999;
+
+    @include dark-mode {
+        & .gotop-button {
+            background-color: $grey-dark-color !important;
+            box-shadow: 0 1px 0px #ffffff10 !important;
+        }
+    }
+
+    .gotop-button {
+        width: 38px;
+        height: 38px;
+        border-radius: 100%;
+        box-shadow: 0 1px 0px rgba(18, 18, 18, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $white-color;
+    }
+
+    .gotop-button:hover {
+        .gotop-icon {
+            fill: $dark-color;
+
+            @include dark-mode {
+                fill: $grey-dark-color;
+            }
+        }
+    }
+
+    .gotop-icon {
+        fill: $grey-dark-color;
+    }
+}
+
+.license-image-viewer {
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    text-align: center;
+    cursor: zoom-out;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+
+    .image-viewer-wrapper {
+        position: relative;
+        height: 100%;
+    }
+
+    img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+footer.license-footer {
+    border-top: 1px solid #00000020;
+    color: #333;
+    height: 12 * $unit;
+    font-size: $funit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff;
+
+    @include dark-mode {
+        background-color: #111;
+        color: #bbb;
+    }
+}

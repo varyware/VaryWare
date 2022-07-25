@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+{%- include head.html -%}
+
+<body>
+    <div class="license">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+
+            <h1 class="license-title" itemprop="name headline">{{ page.title | escape }}</h1>
+            <div class="license-meta">
+
+
+                <span class="license-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    {% if page.author %}
+                    <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
+                    {% else %}
+                    <a class="p-author h-card" itemprop="name" href="/blog">Varyware</a>
+                    {% endif %}
+                </span>
+
+                <span class="license-date" style="width: 8px; text-align: center;" aria-hidden="true">·</span>
+
+                <time class="license-date" class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"
+                    itemprop="datePublished">
+                    {{ page.date | date: site.data_formats.date_format_formal }}
+                </time>
+            </div>
+
+            <div class="license-content e-content" itemprop="articleBody">
+                {{ content }}
+            </div>
+        </article>
+
+    </div>
+
+    {% include footer-license.html %}
+    {% include scroll_to_top.html %}
+</body>
+
+<script src="/assets/main.js"></script>
+
+</html>

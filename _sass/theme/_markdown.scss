@@ -131,11 +131,11 @@ pre {
   margin-bottom: $spacing-unit;
 
   a {
-    color: $blue-theme-color;
+    color: $tint-color;
   }
 
   a:visited {
-    color: $blue-theme-color;
+    color: $tint-color;
   }
 
   p {
@@ -196,32 +196,6 @@ pre {
   visibility: hidden;
 }
 
-.post-gotop-button {
-  position: fixed; 
-  right: 30px; 
-  bottom: 30px;
-  visibility: hidden;
-
-  .gotop-button {
-    display: block; 
-    width: 40px; 
-    height: 40px; 
-    background-color: $background-color;
-    border-radius: 100%; 
-    box-shadow: 0 1px 3px rgba(18,18,18,.2); 
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-  }
-
-  .gotop-button:hover {
-    .gotop-svg {
-      fill: #666;
-    }
-  }
-
-}
-
 .sidebar {
   display: block; 
   position: fixed; 
@@ -272,13 +246,13 @@ pre {
 
     .category-item .current {
       font-size: 14px;
-      color: $blue-theme-color;
+      color: $tint-color;
       font-weight: bold;
     }
 
     .category-item a:hover {
       text-decoration: none;
-      color: $blue-theme-color;
+      color: $tint-color;
       font-weight: bold;
     }
 

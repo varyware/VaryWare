@@ -6,13 +6,18 @@ $monospace-font-family: ui-monospace, Monaco, Menlo, "SF Mono Regular", "Lucida 
 
 $base-font-size: 16px !default;
 
+$funit: 15px !default;
+$unit: 8px !default;
 $grey-color: #595959;
 $white-color: #FFFFFF;
 $black-color: #000000;
 $dark-color: #1D1D20;
+
+$layout-unit: 86px !default;
+$grey-dark-color: #595959;
 $grey-lighter-color: #e8e8e8;
 $grey-light-color: #F7F7F8;
-$blue-theme-color: #043CBE !default;
+$tint-color: #043CBE !default;
 
 $orange-theme-color: #FF9500 !default;
 
@@ -43,8 +48,6 @@ $blockquote-color-darkmode: rgb(139, 148, 158) !default;
 // $brand-color:      #2B65D9 !default;
 
 $blue-theme-color-darkmode: #eee !default;
-$blue-theme-color-light: lighten($blue-theme-color, 46%) !default;
-$blue-theme-color-dark: darken($blue-theme-color, 25%) !default;
 
 $border-grey-darkmode: #21262d !default;
 
@@ -58,8 +61,26 @@ $table-text-align: left !default;
 // Width of the content area
 $content-width: 1080px !default;
 
-$on-palm: 688px !default;
+$on-palm: 599px !default;
 $on-laptop: 1080px !default;
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin on-palm {
+  @media screen and (max-width: $on-palm) {
+    @content;
+  }
+}
+
+@mixin dark-mode {
+  @media screen and (prefers-color-scheme: dark) {
+    @content;
+  }
+}
 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
@@ -73,4 +94,4 @@ $on-laptop: 1080px !default;
 
 // Import partials.
 @import "theme/base", "theme/layout", "theme/markdown",
-  "theme/toc-sidebar", "theme/syntax-highlighting", "theme/updates";
+  "theme/toc-sidebar", "theme/syntax-highlighting", "theme/updates", "custom/license";
