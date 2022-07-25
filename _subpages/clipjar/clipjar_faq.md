@@ -2,7 +2,7 @@
 title: FAQ
 layout: license
 nav_item: 31
-permalink: "/faq/clipjar"
+permalink: "/clipjar/faq/"
 date: 2022-07-25 00:00:00 +0000
 author: Clip Jar
 ---

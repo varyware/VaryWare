@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-permalink: "/privacy/clipjar/"
+permalink: "/clipjar/privacy/"
 layout: license
 nav_item: 22
 nav_title: Privacy

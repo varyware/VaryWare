@@ -3,6 +3,8 @@
     margin-right: auto;
     margin-left: auto;
 
+    flex: 1;
+
     padding-top: $unit * 6;
 
     padding-left: $unit * 4;
@@ -260,7 +262,7 @@
 }
 
 footer.license-footer {
-    border-top: 1px solid #00000020;
+    border-top: 1px solid #00000010;
     color: #333;
     height: 12 * $unit;
     font-size: $funit;
