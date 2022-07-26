@@ -18,16 +18,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: VaryWare
-email: varyware@outlook.com
-description: Software Development Studio
+title: Varyware
+email: feedback@varyware.com
+description: Varyware Software Studio
 # baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://VaryWare.com"
-author: VaryWare
+url: "https://varyware.com"
+author: Varyware
 lang: en_US
-# twitter:
-#   username: VaryWare
-#   card: summary
+twitter:
+  username: vary_ware
+  card: summary
 
 # social:
 #   name: VaryWare

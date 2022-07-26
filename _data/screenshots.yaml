@@ -4,6 +4,7 @@
   images: ["M0", "M1", "M2"]
   description: Clip Jar is a light weight text clips manage app. You can save text clips in one place and share to other apps.
   link: "https://itunes.apple.com/app/id1628120600?mt=8&ct=homepage"
+  tint: "0665CB"
 
 - name: Music Plus
   platform: ["iOS"]
@@ -11,3 +12,4 @@
   images: ["65-1", "65-2", "65-3"]
   description: Apple Music enhanced app brings better listening experience, Apple Music enhanced app brings better listening experience.
   link: "https://itunes.apple.com/app/musicplus/id1626398921?mt=8&ct=homepage"
+  tint: "F92A41"

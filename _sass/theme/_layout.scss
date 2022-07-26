@@ -9,6 +9,10 @@
   @include on-palm {
     height: 64px;
   }
+
+  @include dark-mode {
+    border-bottom: 1px solid #181818;
+  }
 }
 
 .page-header {
@@ -31,10 +35,14 @@
     display: flex;
     margin: 0;
   
-    img {
+    svg {
       height: 24px;
       @include on-palm {
         height: 20px;
+      }
+
+      @include dark-mode {
+        fill: #fff;
       }
     }
   }
@@ -52,11 +60,19 @@
 
     a:visited {
       color: $dark-color;
+
+      @include dark-mode {
+        color: white;
+      }
     }
 
     .active {
       a {
         color: #000000 !important;
+
+        @include dark-mode {
+          color: white;
+        }
       }
     }
 
@@ -73,7 +89,12 @@
   max-width: 128 * $unit;
   display: flex;
   width: 100%;
+  color: black;
   flex-direction: column;
+
+  @include dark-mode {
+    color: white;
+  }
 
   .app-page {
 
@@ -148,6 +169,11 @@
             padding: 2px 12px;
             border-radius: 6px;
             background-color: #f2f2f2;
+
+            @include dark-mode {
+              color: #eee;
+              background-color: #181818;
+            }
           }
 
           @include on-palm {
@@ -170,7 +196,6 @@
 
     .app-description {
       margin: 24px 0 32px 0;
-      color: black;
       flex-grow: 1;
 
       padding: 0 $unit * 12;
@@ -255,6 +280,10 @@
 .page-footer-wrapper {
   width: 100%;
   border-top: 1px solid $grey-lighter-color;
+
+  @include dark-mode {
+    border-top: 1px solid #181818;
+  }
 }
 
 .page-footer {
@@ -274,6 +303,11 @@
   align-items: center;
   justify-content: center; 
   background-color: #fafafa;
+
+  @include dark-mode {
+    background-color: #000;
+    border-bottom: 1px solid #181818;
+  }
 }
 
 .resources-section-box {
@@ -287,9 +321,12 @@
   column-gap: 56px;
 
   @include on-palm {
-    
     padding: 40px $unit * 4;
     justify-content: space-evenly;
+  }
+
+  @include dark-mode {
+    color: white;
   }
 
   .copyrigiht-anouncement {
@@ -303,6 +340,10 @@
       max-width: 303px;
       line-height: 18px;
       color: $dark-color;
+
+      @include dark-mode {
+        color: white;
+      }
     }
 
     @include on-palm {
@@ -331,10 +372,20 @@
     li {
       a {
         color: $dark-color;
+        @include dark-mode {
+          color: white;
+        }
       }
 
       a:visited {
         color: $dark-color;
+        @include dark-mode {
+          color: white;
+        }
+      }
+
+      @include dark-mode {
+        color: white;
       }
     }
 
@@ -342,6 +393,10 @@
       font-weight: 600;
       color: $dark-color;
       margin: 0;
+
+      @include dark-mode {
+        color: white;
+      }
     }
   }
 }
@@ -394,6 +449,9 @@
       font-family: $monospace-font-family;
       color: $dark-color;
       font-weight: bold;
+      @include dark-mode {
+        color: white;
+      }
     }
   }
 }
