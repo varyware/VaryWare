@@ -11,16 +11,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @include dark-mode {
     background-color: #000;
   }
-}
-
-.page-wrapper {
-  margin: 0 auto;
-  max-width: 1024px;
-  width: 80%;
 }
 
 .page-box-wrapper {

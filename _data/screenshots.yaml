@@ -1,0 +1,6 @@
+- name: Clip Jar
+  platform: ["iOS"]
+  prefix: "clipjar"
+  images: ["M0", "M1", "M2"]
+  description: Clip Jar is a light weight text clips manage app. You can save text clips in one place and share to other app.
+  link: "https://itunes.apple.com/app/id1628120600?mt=8&ct=homepage"
