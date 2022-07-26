@@ -1,10 +1,14 @@
 .page-header-wrapper {
   width: 100%;
   border-bottom: 1px solid #E8E8ED;
-  height: 88px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include on-palm {
+    height: 64px;
+  }
 }
 
 .page-header {
@@ -17,13 +21,21 @@
   justify-content: space-between;
   align-items: center;
 
+  padding: 0  12 * $unit;
+
+  @include on-palm {
+    padding: 0 $unit * 4;
+  }
+
   .site-icon {
     display: flex;
     margin: 0;
-    padding: 0 0 0 12 * $unit;
-
+  
     img {
       height: 24px;
+      @include on-palm {
+        height: 20px;
+      }
     }
   }
 
@@ -31,8 +43,12 @@
     display: flex;
     list-style: none;
     font-weight: 500;
-    padding: 0 100px 0 0;
+    padding: 0;
     font-size: 18px;
+
+    @include on-palm {
+      font-size: 17px;
+    }
 
     a:visited {
       color: $dark-color;
@@ -57,6 +73,7 @@
   max-width: 128 * $unit;
   display: flex;
   width: 100%;
+  flex-direction: column;
 
   .app-page {
 
@@ -65,6 +82,8 @@
     flex-direction: column;
     align-items: center;
     padding: 5 * $unit 0 8 * $unit 0;
+    margin-left: auto;
+    margin-right: auto;
 
     .app-header {
 
@@ -76,17 +95,31 @@
 
       padding: 0 $unit * 12;
 
+      @include on-palm {
+        padding: 0 $unit * 4;
+      }
+
+
       .app-icon {
         img {
           width: 10 * $unit;
           height: 10 * $unit;
           display: block;
+
+          @include on-palm {
+            width: 8 * $unit;
+            height: 8 * $unit;
+          }
         }
 
         border-radius: 16px;
         overflow: hidden;
         margin-right: $unit * 4;
         border: 1px solid #00000020;
+
+        @include on-palm {
+          margin-right: $unit * 2;
+        }
       }
 
       .app-info {
@@ -95,10 +128,14 @@
         row-gap: 6px;
 
         .app-name {
-          font-size: 30px;
+          font-size: 28px;
           margin: 0;
-          font-weight: 600;
+          font-weight: 650;
           padding: 0;
+
+          @include on-palm {
+            font-size: 26px;
+          }
         }
 
         .app-platform {
@@ -109,8 +146,12 @@
           .app-platform-badge {
             color: $grey-color;
             padding: 2px 12px;
-            border-radius: 4px;
+            border-radius: 6px;
             background-color: #f2f2f2;
+          }
+
+          @include on-palm {
+            font-size: 16px;
           }
         }
       }
@@ -134,14 +175,21 @@
 
       padding: 0 $unit * 12;
 
+      @include on-palm {
+        padding: 0 $unit * 4;
+      }
+
       p {
         font-size: 22px;
         padding: 0;
-        height: 64px;
         text-align: left;
         vertical-align: middle;
         line-height: 30px;
         margin: 0;
+
+        @include on-palm {
+          font-size: 20px;
+        }
       }
     }
 
@@ -152,14 +200,28 @@
       justify-content: space-between;
       width: 100%;
 
+      @include on-palm {
+        padding: 0 4 * $unit;
+      }
+
+      .app-screenshots-scroller {
+        flex-shrink: 1;
+        overflow-y: hidden;
+        overflow-x: auto;
+      }
+
       .app-screenshots {
         display: flex;
-        flex-direction: row;
         column-gap: 4 * $unit;
+        flex-wrap: nowrap;
+        width: 100%;
 
         .app-screenshots-item {
           display: flex;
           border-radius: 14px;
+          width: 256px;
+          height: 552px;
+          flex-shrink: 0;
           overflow: hidden;
           border: 1px solid #00000010;
           img {
@@ -174,10 +236,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        min-width: 32px;
+        min-width: 48px;
+        flex: 1;
+        opacity: 0;
 
-        svg {
+        img {
           width: 16px;
+        }
+
+        @include on-palm {
+          display: none;
         }
       }
     }
@@ -192,6 +260,7 @@
 .page-footer {
   display: flex;
   width: 100%;
+  font-size: 14px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -199,7 +268,7 @@
 
 .resources-section {
   width: 100%;
-  padding: 0 12 * $unit;
+  padding: 0;
   border-bottom: 1px solid $grey-lighter-color;
   display: flex;
   align-items: center;
@@ -212,11 +281,16 @@
   padding: 0px;
   display: flex;
   flex-direction: row;
-  font-size: 14px;
   max-width: 1024px;
   color: $grey-color;
   padding: 40px $unit * 12;
-  column-gap: 32px;
+  column-gap: 56px;
+
+  @include on-palm {
+    
+    padding: 40px $unit * 4;
+    justify-content: space-evenly;
+  }
 
   .copyrigiht-anouncement {
     margin: 0;
@@ -229,6 +303,10 @@
       max-width: 303px;
       line-height: 18px;
       color: $dark-color;
+    }
+
+    @include on-palm {
+      display: none;
     }
   }
 
@@ -261,7 +339,6 @@
     }
 
     .group-title {
-      font-size: 14px;
       font-weight: 600;
       color: $dark-color;
       margin: 0;
@@ -283,7 +360,6 @@
   .site-description-group {
     color: $grey-color;
     width: 100%;
-    font-size: 14px;
     font-weight: 450;
     text-align: center;
   }
@@ -294,12 +370,17 @@
     width: 100%;
     padding: 32px 12 * $unit;
     max-width: 1024px;
-    font-size: 14px;
     font-weight: 450;
     color: $grey-color;
     margin: 0;
     display: flex;
     justify-content: space-between;
+
+    @include on-palm {
+      padding: 32px $unit * 6;
+      justify-content: center;
+      column-gap: 32px;
+    }
     
     .copyright {
       padding: 0;

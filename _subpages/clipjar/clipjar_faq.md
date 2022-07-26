@@ -11,9 +11,11 @@ author: Clip Jar
 
 Email: [feedback@varyware.com](mailto:feedback@varyware.com)
 
-Frequently asked questions and our answers.
+Frequently asked questions and our answers. If you can't find what you're looking for, please contact us.
 
-If you can't find what you're looking for, please contact us.
+## What happends when a free user creates more than 100 clips?
+
+Please feel free to use it. Clips that exceed the limit will not be deleted, but you will be reminded of the usage status in red text at a reasonable place.
 
 ## How to restore my purchase?
 

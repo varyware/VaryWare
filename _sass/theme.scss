@@ -62,7 +62,7 @@ $table-text-align: left !default;
 $content-width: 1080px !default;
 
 $on-palm: 599px !default;
-$on-laptop: 1080px !default;
+$on-laptop: 1024px !default;
 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
@@ -72,6 +72,12 @@ $on-laptop: 1080px !default;
 
 @mixin on-palm {
   @media screen and (max-width: $on-palm) {
+    @content;
+  }
+}
+
+@mixin on-laptop {
+  @media screen and (max-width: $on-laptop) {
     @content;
   }
 }
