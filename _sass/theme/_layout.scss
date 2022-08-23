@@ -205,7 +205,7 @@
       }
 
       p {
-        font-size: 22px;
+        font-size: 20px;
         padding: 0;
         text-align: left;
         vertical-align: middle;
@@ -237,7 +237,7 @@
 
       .app-screenshots {
         display: flex;
-        column-gap: 4 * $unit;
+        column-gap: $unit;
         flex-wrap: nowrap;
         width: 100%;
 

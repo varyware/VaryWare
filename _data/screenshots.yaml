@@ -9,7 +9,7 @@
 - name: Music Plus
   platform: ["iOS"]
   prefix: "musicplus"
-  images: ["65-1", "65-2", "65-3"]
-  description: Apple Music enhanced app brings better listening experience, Apple Music enhanced app brings better listening experience.
+  images: ["65-1", "65-2", "65-3", "65-4", "65-5", "65-6"]
+  description: Music Plus bringing landscape feature to Apple Music. It also supports home screen widgets, share songs using stylized ASCII Art text and saving high-resolution artwork to Photos.
   link: "https://itunes.apple.com/app/musicplus/id1626398921?mt=8&ct=homepage"
   tint: "F92A41"
