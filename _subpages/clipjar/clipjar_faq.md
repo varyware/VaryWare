@@ -19,4 +19,4 @@ Please feel free to use it. Clips that exceed the limit will not be deleted, but
 
 ## How to restore my purchase?
 
-Click any premium feature such as "Landscape battery...", then app will show a card about Clip Jar Pro. Click "Restore Purchase" and wait, App Store will sync your purchase info.
+Open settings and tap on the first image, then app will show a card about Clip Jar Pro. Click "Restore Purchase" and wait, App Store will sync your purchase info.
